@@ -92,12 +92,17 @@ class DiagnoseRequest(BaseModel):
 @app.post("/api/proxy/diagnose")
 async def proxy_diagnose(req: DiagnoseRequest, request: Request):
     headers = get_proxy_headers(request)
+    
+    # Map chain string to chain_id for backend
+    chain_map = {"ethereum": 1, "polygon": 137, "arbitrum": 42161, "optimism": 10}
+    chain_id = chain_map.get(req.chain.lower(), 1)
+    
     async with httpx.AsyncClient() as client:
         try:
             response = await client.post(
                 f"{SWIFTAGENT_API_URL}/webmcp/diagnose",
                 headers=headers,
-                json={"tx_hash": req.tx_hash, "chain": req.chain},
+                json={"tx_hash": req.tx_hash, "chain_id": chain_id},
                 timeout=30.0
             )
             response.raise_for_status()
