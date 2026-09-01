@@ -48,7 +48,7 @@ async def proxy_get_stats(request: Request):
             response = await client.get(
                 f"{SWIFTAGENT_API_URL}/webmcp/stats",
                 headers=headers,
-                timeout=10.0
+                timeout=30.0
             )
             response.raise_for_status()
             return response.json()
@@ -78,7 +78,7 @@ async def proxy_visitors(request: Request):
             response = await client.get(
                 f"{SWIFTAGENT_API_URL}/webmcp/visitors",
                 headers=headers,
-                timeout=10.0
+                timeout=30.0
             )
             response.raise_for_status()
             return response.json()
