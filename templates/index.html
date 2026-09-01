@@ -3,33 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SwiftAgents API Test Site</title>
+    <title>SwiftAgents WebMCP Demo</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding: 40px; background-color: #0f172a; color: #f8fafc; }
-        .container { max-width: 800px; margin: 0 auto; background: #1e293b; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5); border: 1px solid #334155; }
-        h1 { color: #38bdf8; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding: 40px; background-color: #0f172a; color: #f8fafc; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; background: #1e293b; padding: 40px; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5); border: 1px solid #334155; }
+        h1, h2, h3 { color: #38bdf8; margin-top: 1.5em; }
+        h1 { text-align: center; font-size: 2.5em; margin-top: 0; }
+        .subtitle { text-align: center; font-size: 1.2em; color: #94a3b8; font-weight: 500; margin-bottom: 2em; }
         .widget-placeholder { margin-top: 40px; padding: 20px; background: #0f172a; border: 1px dashed #38bdf8; border-radius: 8px; text-align: center; }
-        .tag { display: inline-block; padding: 4px 8px; background: #0369a1; border-radius: 4px; font-size: 12px; font-weight: bold; margin-right: 5px; margin-bottom: 5px;}
+        .tag { display: inline-block; padding: 6px 12px; background: #0369a1; border-radius: 6px; font-size: 14px; font-weight: bold; margin: 5px; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        code { background-color: #0f172a; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; color: #38bdf8; }
+        a { color: #38bdf8; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        hr { border: 0; border-top: 1px solid #334155; margin: 2em 0; }
+        .footer { text-align: center; font-style: italic; color: #64748b; margin-top: 3em; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>SwiftAgents WebMCP Test Site</h1>
-        <p>This is a dedicated test website for the OpenAI WebMCP Hackathon submission.</p>
-        <p>The SwiftAgents widget embedded on this page securely connects to the real <code>SwiftAgent-be</code> backend infrastructure via a proxy, exposing our core capabilities to your AI.</p>
+        <h1>SwiftAgents + WebMCP</h1>
+        <p class="subtitle">Instantly expose your entire dashboard navigation, knowledge base, and live metrics to AI Agents with zero configuration.</p>
         
-        <div style="margin-top: 30px;">
-            <h3>Available Agent Tools:</h3>
-            <span class="tag">swiftagents_diagnose_crypto_tx</span>
-            <span class="tag">swiftagents_find_on_dashboard</span>
-            <span class="tag">swiftagents_query_knowledge_base</span>
-            <span class="tag">swiftagents_get_dashboard_stats</span>
-        </div>
+        <hr>
 
         <div class="widget-placeholder">
-            <h3>Widget Status: <span style="color: #4ade80;">Active</span></h3>
-            <p>The widget script has loaded and registered WebMCP tools.</p>
-            <p><strong>Instructions for Judges:</strong> Ensure the WebMCP flag is enabled in Chrome, open DevTools, and ask ChatGPT to perform a blockchain diagnosis or query the dashboard!</p>
+            <h3 style="margin-top: 0;">Widget Status: <span style="color: #4ade80;">Active</span></h3>
+            <p>The SwiftAgents widget script has loaded and seamlessly registered the WebMCP tools below into your browser's DOM.</p>
+            <p><strong>Instructions for Judges:</strong> If you have WebMCP enabled (e.g. via the Chrome flag or extension), open your AI assistant right now and ask it to <em>"Navigate this dashboard"</em> or <em>"Show me the live stats"</em>!</p>
+        </div>
+
+        <h2>What is SwiftAgents?</h2>
+        <p>Before WebMCP, SwiftAgents was already a powerful, embeddable AI customer support platform. Companies use SwiftAgents to instantly deploy intelligent chat widgets to their websites. Behind the scenes, SwiftAgents powers these widgets with an advanced suite of tools:</p>
+        <ul>
+            <li><strong>Stroll AI Crawler:</strong> Automatically maps and learns the layout of complex, authenticated SaaS dashboards.</li>
+            <li><strong>Semantic Knowledge Base:</strong> Performs RAG searches across private company documentation.</li>
+            <li><strong>Blockchain Diagnosis:</strong> Deep, on-chain transaction analysis for web3 platforms.</li>
+            <li><strong>Live Analytics:</strong> Real-time metrics on visitors and customer support tickets.</li>
+        </ul>
+
+        <h2>The WebMCP Vision</h2>
+        <p>AI agents are great at browsing public websites, but they are <strong>completely blind</strong> to the internal structure of complex dashboards, authenticated portals, and paywalled SaaS apps. If a user asks their AI, "Where is my API key on this dashboard?", the AI usually has to blindly click around, hallucinate, or fail entirely.</p>
+        <p><strong>We solved this by bringing SwiftAgents' backend power to WebMCP.</strong></p>
+        <p>When a company registers for SwiftAgents and embeds our standard chat widget on their website, we instantly inject a perfect, real-time "GPS Map" of their entire platform directly into the browser's <code>navigator.modelContext</code>.</p>
+        <p>Any visiting AI agent (like ChatGPT) can now natively read the <strong>Complete Dashboard Navigation Graph (NavGraph)</strong>. The AI instantly knows exactly which pages exist, what data they contain, and the exact DOM nodes to click to navigate between them!</p>
+
+        <h2>The WebMCP Tool Suite</h2>
+        <p>By simply embedding our widget, companies automatically expose 5 powerful WebMCP tools to any visiting AI:</p>
+        
+        <div style="margin: 20px 0;">
+            <span class="tag">swiftagents_get_navigation_map</span>
+            <span class="tag">swiftagents_query_knowledge_base</span>
+            <span class="tag">swiftagents_get_dashboard_stats</span><br>
+            <span class="tag">swiftagents_get_recent_visitors</span>
+            <span class="tag">swiftagents_diagnose_crypto_tx</span>
+        </div>
+
+        <ul>
+            <li><strong>swiftagents_get_navigation_map (The Star of the Show):</strong> Returns our proprietary Stroll AI Crawler NavGraph. The AI instantly downloads a topological map of the entire dashboard, eliminating the need for the AI to "guess and check" how to navigate a complex SaaS platform.</li>
+            <li><strong>swiftagents_query_knowledge_base:</strong> Performs a semantic RAG search across the company's private, uploaded documentation.</li>
+            <li><strong>swiftagents_get_dashboard_stats:</strong> Fetches live analytical metrics (total chats, resolved tickets, active visitors).</li>
+            <li><strong>swiftagents_get_recent_visitors:</strong> Returns a real-time list of who is currently browsing the company's website.</li>
+            <li><strong>swiftagents_diagnose_crypto_tx:</strong> Deep, on-chain transaction analysis for web3 platforms.</li>
+        </ul>
+
+        <h2>How It Works</h2>
+        <p>We designed this to be a <strong>Zero-Configuration Rollout</strong> for companies.</p>
+        <ol>
+            <li><strong>The Setup:</strong> A company registers on SwiftAgents and embeds our standard <code>&lt;script&gt;</code> tag on their website.</li>
+            <li><strong>The Magic:</strong> The widget automatically detects if the user's browser supports WebMCP. If it does, it seamlessly registers the 5 tools into the DOM.</li>
+            <li><strong>The Execution:</strong> When an external AI executes a tool, the widget securely bridges the request to the SwiftAgents infrastructure, returning rich, contextual data to the AI instantly.</li>
+        </ol>
+        <p>There is no extra developer work required by the company. Just paste the script, and the site becomes fully AI-navigable.</p>
+
+        <h2>Repository Links</h2>
+        <p>Our hackathon submission spans across our microservice architecture. Here is where the magic happens:</p>
+        <ul>
+            <li><strong><a href="#">SwiftAgent-be (Backend API & Router)</a>:</strong> The backend infrastructure that securely processes WebMCP requests and interfaces with our Stroll Crawler and Knowledge Base.</li>
+            <li><strong><a href="#">SwiftAgent-widget (Frontend Client)</a>:</strong> The React widget that dynamically detects the browser environment and registers the schemas into the WebMCP context.</li>
+            <li><strong><a href="#">SwiftAgents-WebMCP (Demo Environment)</a>:</strong> This repository! It contains our isolated test site used to validate the WebMCP DOM injection locally.</li>
+        </ul>
+
+        <div class="footer">
+            Built for the WebMCP Hackathon
         </div>
     </div>
 
