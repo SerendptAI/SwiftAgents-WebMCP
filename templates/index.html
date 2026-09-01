@@ -3,23 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SwiftAgents Demo Store</title>
+    <title>SwiftAgents API Test Site</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding: 40px; background-color: #f9fafb; color: #111827; }
-        .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
-        h1 { color: #2563eb; }
-        .widget-placeholder { margin-top: 40px; padding: 20px; background: #eff6ff; border: 1px dashed #2563eb; border-radius: 8px; text-align: center; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding: 40px; background-color: #0f172a; color: #f8fafc; }
+        .container { max-width: 800px; margin: 0 auto; background: #1e293b; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5); border: 1px solid #334155; }
+        h1 { color: #38bdf8; }
+        .widget-placeholder { margin-top: 40px; padding: 20px; background: #0f172a; border: 1px dashed #38bdf8; border-radius: 8px; text-align: center; }
+        .tag { display: inline-block; padding: 4px 8px; background: #0369a1; border-radius: 4px; font-size: 12px; font-weight: bold; margin-right: 5px; margin-bottom: 5px;}
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to the SwiftAgents Demo Store</h1>
-        <p>This page simulates a client's website where the SwiftAgents support widget is installed.</p>
-        <p>If you are using a WebMCP-aware agent (like ChatGPT's in-app browser or Chrome with the WebMCP flag enabled), the agent can now automatically see and interact with our support tools without clicking through the UI!</p>
+        <h1>SwiftAgents WebMCP Test Site</h1>
+        <p>This is a dedicated test website for the OpenAI WebMCP Hackathon submission.</p>
+        <p>The SwiftAgents widget embedded on this page securely connects to the real <code>SwiftAgent-be</code> backend infrastructure via a proxy, exposing our core capabilities to your AI.</p>
         
+        <div style="margin-top: 30px;">
+            <h3>Available Agent Tools:</h3>
+            <span class="tag">swiftagents_diagnose_crypto_tx</span>
+            <span class="tag">swiftagents_find_on_dashboard</span>
+            <span class="tag">swiftagents_query_knowledge_base</span>
+            <span class="tag">swiftagents_get_dashboard_stats</span>
+        </div>
+
         <div class="widget-placeholder">
-            <h3>SwiftAgents Support Widget (Invisible)</h3>
-            <p>The widget script has loaded and registered WebMCP tools in the background.</p>
+            <h3>Widget Status: <span style="color: #4ade80;">Active</span></h3>
+            <p>The widget script has loaded and registered WebMCP tools.</p>
+            <p><strong>Instructions for Judges:</strong> Ensure the WebMCP flag is enabled in Chrome, open DevTools, and ask ChatGPT to perform a blockchain diagnosis or query the dashboard!</p>
         </div>
     </div>
 
