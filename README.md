@@ -45,17 +45,6 @@ We designed this to be a **Zero-Configuration Rollout** for companies.
 
 There is no extra developer work required by the company. Just paste the script, and the site becomes fully AI-navigable.
 
-## Repository Links
-
-Our hackathon submission spans across our microservice architecture. Here is where the magic happens:
-
-* **[SwiftAgent-be (Backend API & Router)](https://github.com/SerendptAI/SwiftAgent-be)** 
-  * The backend infrastructure that securely processes WebMCP requests and interfaces with our Stroll Crawler and Knowledge Base.
-* **[SwiftAgent-widget (Frontend Client)](https://github.com/SerendptAI/SwiftAgent-widget)** 
-  * The React widget that dynamically detects the browser environment and registers the schemas into the WebMCP context.
-* **[SwiftAgents-WebMCP (Demo Environment)](https://github.com/SerendptAI/SwiftAgents-WebMCP)** 
-  * This repository! It contains our isolated test site used to validate the WebMCP DOM injection locally.
-
 ---
 
 <div align="center">
