@@ -1,0 +1,26 @@
+{
+  "name": "swiftagents-webmcp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "SwiftAgents WebMCP demo environment",
+  "scripts": {
+    "dev": "concurrently -n web,api -c cyan,magenta \"vite\" \"node --watch server/index.js\"",
+    "build": "vite build",
+    "start": "node server/index.js",
+    "preview": "vite preview",
+    "test:tools": "node scripts/test-agent-tools.js"
+  },
+  "dependencies": {
+    "@rive-app/react-canvas": "^4.33.1",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.0",
+    "concurrently": "^9.2.1",
+    "vite": "^7.1.12"
+  }
+}
