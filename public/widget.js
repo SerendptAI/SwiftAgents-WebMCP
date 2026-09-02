@@ -77,23 +77,39 @@
   // The demo page reads this to report what really got registered.
   window.__swiftagents = { registeredTools: [] };
 
-  if (!("modelContext" in window.navigator)) {
-    console.warn("WebMCP is not supported in this browser. Tools will not be registered.");
-    return;
+  function registerTools() {
+    if (!("modelContext" in window.navigator)) {
+      return false;
+    }
+
+    console.log("WebMCP supported! Registering SwiftAgents tools...");
+
+    TOOLS.forEach(function (tool) {
+      navigator.modelContext.registerTool({
+        name: tool.name,
+        description: tool.description,
+        inputSchema: tool.inputSchema,
+        execute: toExecutor(tool),
+      });
+      window.__swiftagents.registeredTools.push(tool.name);
+    });
+
+    console.log("SwiftAgents WebMCP tools registered successfully.");
+    window.dispatchEvent(new CustomEvent("swiftagents:webmcp-ready"));
+    return true;
   }
 
-  console.log("WebMCP supported! Registering SwiftAgents tools...");
-
-  TOOLS.forEach(function (tool) {
-    navigator.modelContext.registerTool({
-      name: tool.name,
-      description: tool.description,
-      inputSchema: tool.inputSchema,
-      execute: toExecutor(tool),
-    });
-    window.__swiftagents.registeredTools.push(tool.name);
-  });
-
-  console.log("SwiftAgents WebMCP tools registered successfully.");
-  window.dispatchEvent(new CustomEvent("swiftagents:webmcp-ready"));
+  if (!registerTools()) {
+    console.warn("WebMCP not detected immediately. Waiting for injection...");
+    var attempts = 0;
+    var interval = setInterval(function() {
+      attempts++;
+      if (registerTools()) {
+        clearInterval(interval);
+      } else if (attempts >= 20) {
+        console.warn("WebMCP is not supported in this browser. Tools will not be registered.");
+        clearInterval(interval);
+      }
+    }, 100);
+  }
 })();
