@@ -4,7 +4,7 @@ const READY_EVENT = "swiftagents:webmcp-ready";
 
 function readStatus() {
   return {
-    supported: "modelContext" in navigator,
+    supported: "modelContext" in document,
     registeredTools: window.__swiftagents?.registeredTools ?? [],
   };
 }

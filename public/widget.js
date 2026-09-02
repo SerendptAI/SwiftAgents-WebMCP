@@ -78,14 +78,14 @@
   window.__swiftagents = { registeredTools: [] };
 
   function registerTools() {
-    if (!("modelContext" in window.navigator)) {
+    if (!("modelContext" in document)) {
       return false;
     }
 
     console.log("WebMCP supported! Registering SwiftAgents tools...");
 
     TOOLS.forEach(function (tool) {
-      navigator.modelContext.registerTool({
+      document.modelContext.registerTool({
         name: tool.name,
         description: tool.description,
         inputSchema: tool.inputSchema,
