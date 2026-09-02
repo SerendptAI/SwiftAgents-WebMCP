@@ -17,13 +17,7 @@ export const tryItQuestions = [
     status: "→ fetching recent visitors…",
     result: "1,284 unique visitors across 7 days. 63% returning, peak on Thursday.",
   },
-  {
-    id: "wallet",
-    label: "Check wallet 0x4f2a...9c1d",
-    call: "agent.call('swiftagents_diagnose_wallet', { address: '0x4f2a...9c1d' })",
-    status: "→ resolving on-chain activity…",
-    result: "Wallet resolved. 42 transactions, last active 3 days ago, no failed transfers.",
-  },
+
   {
     id: "refund-policy",
     label: "What's the refund policy?",
