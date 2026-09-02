@@ -8,23 +8,6 @@
 
         // Tool 1: Blockchain Diagnosis
         navigator.modelContext.registerTool({
-            name: "swiftagents_diagnose_crypto_tx",
-            description: "Diagnoses a blockchain transaction hash for errors or status across EVM and BTC chains",
-            inputSchema: {
-                type: "object",
-                properties: {
-                    tx_hash: { type: "string", description: "The transaction hash" },
-                    chain: { type: "string", description: "The blockchain network (e.g., 'ethereum', 'bitcoin', 'polygon')" }
-                },
-                required: ["tx_hash", "chain"]
-            },
-            async execute({ tx_hash, chain }) {
-                console.log(`Executing diagnose_crypto_tx for ${tx_hash} on ${chain}`);
-                const response = await fetch('/api/proxy/diagnose', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ tx_hash, chain })
-                });
                 const result = await response.json();
                 return { content: [{ type: "text", text: JSON.stringify(result, null, 2) }] };
             }

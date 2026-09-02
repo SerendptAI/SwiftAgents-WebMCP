@@ -51,7 +51,6 @@
         <ul>
             <li><strong>Stroll AI Crawler:</strong> Automatically maps and learns the layout of complex, authenticated SaaS dashboards.</li>
             <li><strong>Semantic Knowledge Base:</strong> Performs RAG searches across private company documentation.</li>
-            <li><strong>Blockchain Diagnosis:</strong> Deep, on-chain transaction analysis for web3 platforms.</li>
             <li><strong>Live Analytics:</strong> Real-time metrics on visitors and customer support tickets.</li>
         </ul>
 
@@ -62,23 +61,34 @@
         <p>Any visiting AI agent (like ChatGPT) can now natively read the <strong>Complete Dashboard Navigation Graph (NavGraph)</strong>. The AI instantly knows exactly which pages exist, what data they contain, and the exact DOM nodes to click to navigate between them!</p>
 
         <h2>The WebMCP Tool Suite</h2>
-        <p>By simply embedding our widget, companies automatically expose 5 powerful WebMCP tools to any visiting AI:</p>
+        <p>By simply embedding our widget, companies automatically expose 4 powerful WebMCP tools to any visiting AI:</p>
         
-        <div style="margin: 20px 0;">
-            <span class="tag">swiftagents_get_navigation_map</span>
-            <span class="tag">swiftagents_query_knowledge_base</span>
-            <span class="tag">swiftagents_get_dashboard_stats</span><br>
-            <span class="tag">swiftagents_get_recent_visitors</span>
-            <span class="tag">swiftagents_diagnose_crypto_tx</span>
-        </div>
-
-        <ul>
-            <li><strong>swiftagents_get_navigation_map (The Star of the Show):</strong> Returns our proprietary Stroll AI Crawler NavGraph. The AI instantly downloads a topological map of the entire dashboard, eliminating the need for the AI to "guess and check" how to navigate a complex SaaS platform.</li>
-            <li><strong>swiftagents_query_knowledge_base:</strong> Performs a semantic RAG search across the company's private, uploaded documentation.</li>
-            <li><strong>swiftagents_get_dashboard_stats:</strong> Fetches live analytical metrics (total chats, resolved tickets, active visitors).</li>
-            <li><strong>swiftagents_get_recent_visitors:</strong> Returns a real-time list of who is currently browsing the company's website.</li>
-            <li><strong>swiftagents_diagnose_crypto_tx:</strong> Deep, on-chain transaction analysis for web3 platforms.</li>
-        </ul>
+        <table style="width: 100%; text-align: left; border-collapse: collapse; margin: 30px 0;">
+            <thead>
+                <tr style="border-bottom: 2px solid #334155;">
+                    <th style="padding: 12px; color: #38bdf8;">Tool Name</th>
+                    <th style="padding: 12px; color: #38bdf8;">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="border-bottom: 1px solid #334155;">
+                    <td style="padding: 12px;"><span class="tag">swiftagents_get_navigation_map</span></td>
+                    <td style="padding: 12px;"><strong>(The Star of the Show)</strong> Returns our proprietary Stroll AI Crawler NavGraph. The AI instantly downloads a topological map of the entire dashboard, eliminating the need to "guess and check".</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #334155;">
+                    <td style="padding: 12px;"><span class="tag">swiftagents_query_knowledge_base</span></td>
+                    <td style="padding: 12px;">Performs a semantic RAG search across the company's private, uploaded documentation.</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #334155;">
+                    <td style="padding: 12px;"><span class="tag">swiftagents_get_dashboard_stats</span></td>
+                    <td style="padding: 12px;">Fetches live analytical metrics (total chats, resolved tickets, active visitors).</td>
+                </tr>
+                <tr>
+                    <td style="padding: 12px;"><span class="tag">swiftagents_get_recent_visitors</span></td>
+                    <td style="padding: 12px;">Returns a real-time list of who is currently browsing the company's website.</td>
+                </tr>
+            </tbody>
+        </table>
 
         <h2>How It Works</h2>
         <p>We designed this to be a <strong>Zero-Configuration Rollout</strong> for companies.</p>
@@ -92,9 +102,9 @@
         <h2>Repository Links</h2>
         <p>Our hackathon submission spans across our microservice architecture. Here is where the magic happens:</p>
         <ul>
-            <li><strong><a href="#">SwiftAgent-be (Backend API & Router)</a>:</strong> The backend infrastructure that securely processes WebMCP requests and interfaces with our Stroll Crawler and Knowledge Base.</li>
-            <li><strong><a href="#">SwiftAgent-widget (Frontend Client)</a>:</strong> The React widget that dynamically detects the browser environment and registers the schemas into the WebMCP context.</li>
-            <li><strong><a href="#">SwiftAgents-WebMCP (Demo Environment)</a>:</strong> This repository! It contains our isolated test site used to validate the WebMCP DOM injection locally.</li>
+            <li><strong><a href="https://github.com/SerendptAI/SwiftAgent-be" target="_blank">SwiftAgent-be (Backend API & Router)</a>:</strong> The backend infrastructure that securely processes WebMCP requests and interfaces with our Stroll Crawler and Knowledge Base.</li>
+            <li><strong><a href="https://github.com/SerendptAI/SwiftAgent-widget" target="_blank">SwiftAgent-widget (Frontend Client)</a>:</strong> The React widget that dynamically detects the browser environment and registers the schemas into the WebMCP context.</li>
+            <li><strong><a href="https://github.com/SerendptAI/SwiftAgents-WebMCP" target="_blank">SwiftAgents-WebMCP (Demo Environment)</a>:</strong> This repository! It contains our isolated test site used to validate the WebMCP DOM injection locally.</li>
         </ul>
 
         <div class="footer">

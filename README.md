@@ -10,7 +10,6 @@
 Before WebMCP, SwiftAgents was already a powerful, embeddable AI customer support platform. Companies use SwiftAgents to instantly deploy intelligent chat widgets to their websites. Behind the scenes, SwiftAgents powers these widgets with an advanced suite of tools:
 - **Stroll AI Crawler:** Automatically maps and learns the layout of complex, authenticated SaaS dashboards.
 - **Semantic Knowledge Base:** Performs RAG searches across private company documentation.
-- **Blockchain Diagnosis:** Deep, on-chain transaction analysis for web3 platforms.
 - **Live Analytics:** Real-time metrics on visitors and customer support tickets.
 
 ## The WebMCP Vision
@@ -25,7 +24,7 @@ Any visiting AI agent (like ChatGPT) can now natively read the **Complete Dashbo
 
 ## The WebMCP Tool Suite
 
-By simply embedding our widget, companies automatically expose 5 powerful WebMCP tools to any visiting AI:
+By simply embedding our widget, companies automatically expose 4 powerful WebMCP tools to any visiting AI:
 
 1. **swiftagents_get_navigation_map (The Star of the Show)**
    - Returns our proprietary Stroll AI Crawler NavGraph. The AI instantly downloads a topological map of the entire dashboard, eliminating the need for the AI to "guess and check" how to navigate a complex SaaS platform.
@@ -35,15 +34,13 @@ By simply embedding our widget, companies automatically expose 5 powerful WebMCP
    - Fetches live analytical metrics (total chats, resolved tickets, active visitors).
 4. **swiftagents_get_recent_visitors**
    - Returns a real-time list of who is currently browsing the company's website.
-5. **swiftagents_diagnose_crypto_tx**
-   - Deep, on-chain transaction analysis for web3 platforms.
 
 ## How It Works
 
 We designed this to be a **Zero-Configuration Rollout** for companies.
 
 1. **The Setup:** A company registers on SwiftAgents and embeds our standard `<script>` tag on their website.
-2. **The Magic:** The widget automatically detects if the user's browser supports WebMCP. If it does, it seamlessly registers the 5 tools into the DOM.
+2. **The Magic:** The widget automatically detects if the user's browser supports WebMCP. If it does, it seamlessly registers the 4 tools into the DOM.
 3. **The Execution:** When an external AI executes a tool, the widget securely bridges the request to the SwiftAgents infrastructure, returning rich, contextual data to the AI instantly.
 
 There is no extra developer work required by the company. Just paste the script, and the site becomes fully AI-navigable.
@@ -52,11 +49,11 @@ There is no extra developer work required by the company. Just paste the script,
 
 Our hackathon submission spans across our microservice architecture. Here is where the magic happens:
 
-* **[SwiftAgent-be (Backend API & Router)](#)** 
+* **[SwiftAgent-be (Backend API & Router)](https://github.com/SerendptAI/SwiftAgent-be)** 
   * The backend infrastructure that securely processes WebMCP requests and interfaces with our Stroll Crawler and Knowledge Base.
-* **[SwiftAgent-widget (Frontend Client)](#)** 
+* **[SwiftAgent-widget (Frontend Client)](https://github.com/SerendptAI/SwiftAgent-widget)** 
   * The React widget that dynamically detects the browser environment and registers the schemas into the WebMCP context.
-* **[SwiftAgents-WebMCP (Demo Environment)](#)** 
+* **[SwiftAgents-WebMCP (Demo Environment)](https://github.com/SerendptAI/SwiftAgents-WebMCP)** 
   * This repository! It contains our isolated test site used to validate the WebMCP DOM injection locally.
 
 ---
